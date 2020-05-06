@@ -4,10 +4,7 @@
 <meta charset="utf-8"> 
 <title>获取地理位置</title> 
 </head>
-<body>
-<p id="demo">点击按钮获取您当前坐标：</p>
-<button onclick="getLocation()">按钮</button>
-<script type="text/javascript" src="/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
 <script>
 var x=document.getElementById("demo");
 function getLocation()
@@ -41,6 +38,10 @@ function showPosition(position)
 		var weidu = position.coords.latitude
 	]
 }
+<body>
+<p id="demo">点击按钮获取您当前坐标：</p>
+<button onclick="getLocation()">按钮</button>
+
 </script>
 </body>
 </html>
