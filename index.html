@@ -6,7 +6,8 @@
 </head>
 <body>
 <p id="demo">点击按钮获取您当前坐标：</p>
-<button onclick="getLocation()">点我</button>
+<button onclick="getLocation()">按钮</button>
+<script type="text/javascript" src="/jquery/jquery.js"></script>
 <script>
 var x=document.getElementById("demo");
 function getLocation()
@@ -18,13 +19,27 @@ function getLocation()
 	else
 	{
 		x.innerHTML="该浏览器不支持获取地理位置。";
+		var y=""
 	}
+	$.ajax({
+		type:'post',
+		url:'sql.json',
+		data:y,
+		dataType:'json',
+		success:function(data){
+			alert("data");
+		}
+	});
 }
 
 function showPosition(position)
 {
 	x.innerHTML="纬度: " + position.coords.latitude + 
 	"<br>经度: " + position.coords.longitude;	
+	var y=[
+		var jindu = position.coords.longitude,
+		var weidu = position.coords.latitude
+	]
 }
 </script>
 </body>
