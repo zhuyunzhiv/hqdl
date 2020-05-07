@@ -24,10 +24,10 @@ function getLocation()
 	$.ajax({
 		type:'post',
 		url:'sql.json',
-		data:y,
+		data:(x.val()),
 		dataType:'json',
 		success:function(data){
-			alert(data[0]);
+			alert("success");
 		},
 		error:function(data){
 			alert("error");
@@ -39,7 +39,8 @@ function showPosition(position)
 {
 	x.innerHTML="纬度: " + position.coords.latitude + 
 	"<br>经度: " + position.coords.longitude;	
-	var y = new Array(position.coords.longitude,position.coords.latitude);
+	var y = position.coords.longitude;
+	var t=position.coords.latitude;
 }
 
 
