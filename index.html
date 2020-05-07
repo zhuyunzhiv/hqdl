@@ -6,7 +6,7 @@
 </head>
 	<body>
 <p id="demo">点击按钮获取您当前坐标：</p>
-<button onclick="getLocation()">按钮</button>
+<button onclick="getLocation();">按钮</button>
 <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 <script>
 var x=document.getElementById("demo");
@@ -21,22 +21,19 @@ function getLocation()
 		x.innerHTML="该浏览器不支持获取地理位置。";
 		var y=0;
 	}
-	setTimeout(function(){
 	$.ajax({
-		type:'post',
+		type:'POST',
 		url:'sql.json',
-		data:y,
-		dataType:'json',
+		data:'[{1,2,3,4,5,6,7}]',
+		dataType:'JSON',
 		success:function(data){
-			alert("success");
+			console.log("success");
 		},
-		error:function(data){
-			alert("error");
+		error:function(){
+			console.log("error")
 		}
 	});
 	
-},10000);
-
 }
 
 function showPosition(position)
