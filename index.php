@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+$data = array();
+$data['name'] = 'admin';
+$data['pwd'] = '123456';
+ 
+// 把PHP数组转成JSON字符串
+$json_string = json_encode($data);
+ 
+// 写入文件
+file_put_contents('sql.json', $json_string);
+?>
 <html>
 <head> 
 <meta charset="utf-8"> 
@@ -18,11 +28,11 @@ function getLocation()
 	}
 	else
 	{
-		x.innerHTML="该浏览器不支持获取地理位置。";
-		
+		x.innerHTML="该浏览器不支持获取地理位置。";	
 	}
-	
-	
+		$.ajax({
+			
+		});
 }
 
 function showPosition(position)
