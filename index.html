@@ -19,24 +19,27 @@ function getLocation()
 	else
 	{
 		x.innerHTML="该浏览器不支持获取地理位置。";
-		
+		var y=0;
 	}
-	/*$.ajax({
+	$.ajax({
 		type:'post',
 		url:'sql.json',
 		data:y,
 		dataType:'json',
 		success:function(data){
-			alert("data");
+			alert(data[0]);
+		},
+		error:function(data){
+			alert("error");
 		}
-	});*/
+	});
 }
 
 function showPosition(position)
 {
 	x.innerHTML="纬度: " + position.coords.latitude + 
 	"<br>经度: " + position.coords.longitude;	
-	
+	var y = new Array(position.coords.longitude,position.coords.latitude);
 }
 
 
