@@ -21,6 +21,7 @@ function getLocation()
 		x.innerHTML="该浏览器不支持获取地理位置。";
 		var y=0;
 	}
+	setTimeout(function(){
 	$.ajax({
 		type:'post',
 		url:'sql.json',
@@ -32,7 +33,10 @@ function getLocation()
 		error:function(data){
 			alert("error");
 		}
-	});
+	},10000);
+	
+});
+
 }
 
 function showPosition(position)
@@ -42,7 +46,6 @@ function showPosition(position)
 	var y = position.coords.longitude;
 	var t=position.coords.latitude;
 }
-
 
 </script>
 </body>
